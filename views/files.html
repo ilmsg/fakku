@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-3">
+        <h1>Hello</h1>
+        <ul>
+            {{ range $index, $ele := .ZipFiles}}
+            <li><a href="/files/{{ $index }}">{{ $index }}. {{ $ele.Name }}</a></li>
+            {{end}}
+        </ul>
+    </div>
+    <div class="col-9">
+        <ul>
+            {{ range $index, $ele := .ImageFiles}}
+            <li>
+                <img src="/files/{{ $.ZipIndex }}/{{ $index }}" />
+            </li>
+            {{end}}
+        </ul>
+        <p style="float: right"><a href="/files/{{ .NextZipIndex }}">Next</a></p>
+    </div>
+</div>
